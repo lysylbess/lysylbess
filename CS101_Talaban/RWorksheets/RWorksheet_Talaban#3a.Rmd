@@ -92,6 +92,7 @@ arraydata
 
 #3b
 dim(arraydata)
+#
 
 #3c
 rownames(arraydata)<- c("a", "b")
