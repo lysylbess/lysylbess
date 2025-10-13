@@ -1,0 +1,101 @@
+---
+title: "RWorksheet_Talaban#3a"
+output: html_document
+---
+
+```{r}
+#1a
+first_eleven <-LETTERS[1:11]
+
+#1b
+oddletters <-LETTERS[seq(1,26, by = 2)]
+oddletters
+
+#1c
+vowels <-LETTERS[c(1,5,9,15,21)]
+
+#1d
+last5 <- LETTERS[22:25]
+
+#1e
+between <- LETTERS[15:24]
+```
+```{r}
+#2a
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+temp <- c(42,39,34,34,30,27)
+
+#2b
+temp <- c(42,39,34,34,30,27)
+
+#3c
+city_temp <- data.frame(city, temp)
+
+#3d
+names(city_temp)[1]<-"City"
+names(city_temp)[2]<-"Temperature"
+city_temp
+
+#3e
+str(city_temp)
+#The output shows data frame containing six cities with their corresponding temperature
+
+#3f
+#The content of 3 and 4 is Iloilo and Tacloban and they have the same temperature
+
+#3g
+print(city_temp[1,])
+print(city_temp[6,])
+```
+#MATRICES
+```{r}
+#1
+matrix(c(5,6,7,4,3,2,1,2,3,7,8,9),nrow = 2)
+
+matrix(data = c(3,4,5,6,7,8),3,2)
+
+diag(1,nrow = 6,ncol = 5)
+
+diag(6)
+```
+```{r}
+#2a
+oneeight <- matrix(c(1:8, 11:14),3,4)
+oneeight
+
+#2b
+oneeight2 <- oneeight * 2
+oneeight2
+
+#2c
+oneeight[2,]
+oneeight2[2,]
+
+#2d
+oneeight[1:2, 3:4]
+
+#2e
+oneeight[3, 2:3]
+
+#2f
+oneeight[, 4]
+
+#2g
+dimnames(oneeight2) <- list(c("isa","dalawa","tatlo"), c("uno","dos","tres","quatro"))
+oneeight2
+```
+```{r}
+#3a
+arrayval <-c(1,2,3,4,5,6,7,8,9,0,3,4,5,1)
+arraydata <-array(rep(arrayval, 2), dim=c(2,4,3))
+arraydata
+
+#3b
+dim(arraydata)
+
+#3c
+rownames(arraydata)<- c("a", "b")
+colnames(arraydata)<- c("A", "B","C", "D")
+```
+
+
