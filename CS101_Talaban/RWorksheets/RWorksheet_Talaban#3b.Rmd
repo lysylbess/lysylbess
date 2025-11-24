@@ -1,0 +1,151 @@
+---
+title: "RWorksheet_Talaban#3b"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+#1a
+Respondent <- 1:20
+Sex <- c(2,2,1,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,1,2)
+Fathers_Occ <- c(1,3,3,3,1,2,3,1,1,1,3,2,1,3,3,1,3,1,2,1)
+PersonsAtHome <- c(5,7,3,8,5,9,6,7,8,4,7,5,4,7,8,8,3,11,7,6)
+SiblingsAtSchool <- c(6,4,4,1,2,1,5,3,1,2,3,2,5,5,2,1,2,5,3,2)
+TypesOfHouses <- c(1,2,3,1,1,3,3,1,2,3,2,3,2,2,3,3,3,3,3,2)
+
+df <- data.frame(Respondent, Sex, Fathers_Occ, PersonsAtHome, SiblingsAtSchool, TypesOfHouses)
+
+df
+```
+
+
+```{r}
+#1b
+str(df)
+```
+
+```{r}
+#1c
+mean(SiblingsAtSchool)
+#No beacause the mean is 2.95 only
+```
+
+```{r}
+#1d
+df_subset <-df[1:2,]
+
+df_subset
+```
+
+```{r}
+#1e
+df_subset2 <-df[c(3,5), c(2,4)]
+
+df_subset2
+```
+
+
+```{r}
+#1f
+types_houses <-df$Types.of.houses
+```
+
+```{r}
+#1g
+m_farmer <-df[df$Sex == 1 & df$Fathers_Occ == 1,]
+m_farmer
+```
+
+```{r}
+#1h
+f_siblings <- df[df$Sex == 2 & df$SiblingsAtSchool >= 5,]
+f_siblings
+```
+
+```{r}
+#2
+df = data.frame(Ints=integer(),
+Doubles=double(), Characters=character(),
+Logicals=logical(),
+Factors=factor(),
+stringsAsFactors=FALSE)
+
+print("Structure of the empty dataframe:")
+print(str(df))
+```
+
+```{r}
+#2a
+#There are 0 observations of 5 variables. The result is NULL.
+```
+
+```{r}
+#3a
+household <- read.csv("HouseholdData.csv")
+print(household)
+```
+
+```{r}
+#3b
+household$Sex <- factor(household$Sex, levels = c("Male", "Female"))
+household$SexInt <- as.integer(household$Sex)
+print(household[, c("Sex", "SexInt")])
+```
+
+```{r}
+#3c
+household$Types.of.Houses <- factor(household$Types.of.Houses, levels = c("Wood", "Congrete", "Semi-congrete"))
+household$Types.of.Houses.Int <- as.integer(household$Types.of.Houses)
+print(household[, c("Types.of.Houses", "Types.of.Houses.Int")])
+```
+
+```{r}
+#3d
+household$Fathers.Occupation <- factor(household$Fathers.Occupation, levels = c(1, 2, 3), labels = c("Farmer", "Driver", "Other"))
+household$Fathers.Occupation.Int <- as.integer(household$Fathers.Occupation)
+print(household[, c("Fathers.Occupation", "Fathers.Occupation.Int")])
+```
+
+```{r}
+#3e
+filtered_a <- household[
+  household$Sex == "Female" & household$Fathers_Occ == "Driver",]
+filtered_a
+```
+
+```{r}
+#3f
+filtered_b <- household[household$SiblingsAtSchool >= 5,]
+filtered_b
+```
+
+```{r}
+#4
+date <- c("July 14, 2020", "July 15, 2020", "July 17, 2020", "July 18, 2020", "July 20, 2020", "July 21, 2020")
+
+negative <- c(2450, 4200, 3250, 3250, 2350, 4050)
+neutral <- c(1575, 2800, 1900, 2050, 1450, 2700)
+positive <- c(1725, 3200, 2400, 2525, 1700, 3375)
+
+sentimentsoftweets_df <- data.frame(
+  Date = as.Date(date, format = "%B %d, %Y"),
+  Negative = negative,
+  Neutral = neutral,
+  Positive = positive)
+
+print(sentimentsoftweets_df)
+
+#The chart shows that tweet volumes vary by day, but negative and positive sentiments generally outnumber neutral ones across the displayed dates.
+```
+
+
+
+
+
+
+
+
+
+
+
