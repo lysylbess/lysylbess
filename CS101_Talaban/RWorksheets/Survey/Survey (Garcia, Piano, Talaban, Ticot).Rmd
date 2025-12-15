@@ -1,6 +1,6 @@
 ---
 title: "Survey"
-author: "Dianene Khrysna G. Ticot"
+author: "Garcia, Piano, Talaban, Ticot"
 date: "2025-12-15"
 output: pdf_document
 ---
